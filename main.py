@@ -3,7 +3,6 @@ import openai
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import parse_qs, urlparse
 
-openai.api_key = "" # @param {type:"string"}
 url = "" # @param {type:"string"}
 transcript = YouTubeTranscriptApi.get_transcript(parse_qs(urlparse(url).query).get('v')[0])
 
