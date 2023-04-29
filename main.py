@@ -1,9 +1,10 @@
+import sys
 import textwrap
 import openai
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import parse_qs, urlparse
 
-url = "" # @param {type:"string"}
+url = sys.argv[1] # @param {type:"string"}
 transcript = YouTubeTranscriptApi.get_transcript(parse_qs(urlparse(url).query).get('v')[0])
 
 for i in range(0, len(transcript), 1000):

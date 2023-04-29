@@ -3,8 +3,7 @@ Youtube Too Long Didn't Watch
 
 # Usage
 
-- Clone the repository
-- Install requirements
+- ```git clone https://github.com/musabgultekin/youtube-tldw```
+- ```pip install -r requirements.txt```
 - ```export OPENAI_API_KEY=XXX```
-- Change the url in the main.py
-- Run ```python3 main.py```
+- ```python3 main.py https://www.youtube.com/watch?v=XcCmMOWuAF4```
