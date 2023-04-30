@@ -4,6 +4,7 @@ from urllib.parse import parse_qs, urlparse
 import openai
 from youtube_transcript_api import YouTubeTranscriptApi
 
+
 def summarize_video(url, model):
     video_id = parse_qs(urlparse(url).query).get('v')[0]
     transcript = YouTubeTranscriptApi.get_transcript(video_id)
