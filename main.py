@@ -8,7 +8,6 @@ def summarize_video(url, model):
     video_id = parse_qs(urlparse(url).query).get('v')[0]
     transcript = YouTubeTranscriptApi.get_transcript(video_id)
 
-    print(len(transcript))
     for i in range(0, len(transcript), 1000):
         context = "\n".join([t["text"] for t in transcript[i:i+1000]])
         prompt = f"Summarize this youtube video section's transcript with bullet points:\n---\n{context}"
