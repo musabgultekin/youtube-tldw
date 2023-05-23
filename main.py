@@ -12,10 +12,7 @@ def summarize_video(url, model):
     for i in range(0, len(transcript), 1000):
         context = "\n".join([t["text"] for t in transcript[i:i+1000]])
         prompt = f"Summarize this youtube video section's transcript with bullet points:\n---\n{context}"
-        summary = openai.ChatCompletion.create(
-            model=model,
-            messages=[{"role": "user", "content": prompt}]
-        ).choices[0].message["content"]
+        summary = openai.ChatCompletion.create(model=model,messages=[{"role": "user", "content": prompt}]).choices[0].message["content"]
         print(summary)
 
 
